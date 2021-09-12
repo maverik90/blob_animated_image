@@ -1,0 +1,48 @@
+    body{
+        margin:0px;
+    }
+
+    .widget-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .blob_image1 {
+        width: 500px;
+        height: 500px;
+        margin: 0px;
+        clip-path: url(#clip-path-svg);
+        -webkit-clip-path: url(#clip-path-svg);
+        animation: clipRotateAnim 30s linear infinite;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blob_image1:before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        bottom: -10%;
+        left: -10%;
+        right: -10%;
+        background: var(--i) center/cover no-repeat;
+        animation: inherit;
+        animation-direction: reverse;
+    }
+
+    .blobsvgclippath {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -99;
+    }
+    
+    @keyframes clipRotateAnim {
+        to {
+            transform: rotate(360deg);
+        }
+    }
