@@ -1,0 +1,64 @@
+
+<link href="style.css" type="text/css" rel="stylesheet">
+
+<style>
+
+    body{
+        margin:0px;
+    }
+
+    .widget-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .blob_image1 {
+        width: 500px;
+        height: 500px;
+        margin: 0px;
+        clip-path: url(#clip-path-svg);
+        -webkit-clip-path: url(#clip-path-svg);
+        animation: clipRotateAnim 30s linear infinite;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blob_image1:before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        bottom: -10%;
+        left: -10%;
+        right: -10%;
+        background: var(--i) center/cover no-repeat;
+        animation: inherit;
+        animation-direction: reverse;
+    }
+
+    .blobsvgclippath {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -99;
+    }
+    
+    @keyframes clipRotateAnim {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+
+<div class="widget-container">
+    <div class="blob_image1" style="--i:url(main-img-1.png)"></div>
+</div>
+
+<svg class="blobsvgclippath blobsvg1"><clipPath id="clip-path-svg" clipPathUnits="objectBoundingBox"><path d="M0.445,0 C0.581,-0.001,0.703,0.065,0.802,0.153 C0.906,0.244,1,0.356,1,0.49 C0.999,0.622,0.899,0.729,0.798,0.822 C0.699,0.913,0.584,0.998,0.445,1 C0.305,1,0.171,0.934,0.082,0.832 C0,0.738,-0.002,0.611,0,0.49 C0.002,0.371,0.011,0.248,0.093,0.158 C0.181,0.061,0.31,0.001,0.445,0"></path></clipPath></svg>
+
+
+<script src="script.js" type="text/javascript"></script>
